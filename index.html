@@ -1,19 +1,30 @@
 <html>
 	<head>
-		<title>Fläche eines Rechtecks</title>
+		<title>Celcius - Fahrenheit Umrechner</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<script>
 			"use strict";
 
-			function flaeche(a,b) {
-				return a*b;
+            
+            function Fahrenheit(celsius) {
+				return celsius*1.8+32;
+			}
+
+			function Celsius(fahrenheit) {
+				return 5/9*(fahrenheit-32);
 			}
 
 			function clicked() {
-				let vSeitea = document.getElementById("idSeitea").value;
-				let vSeiteb = document.getElementById("idSeiteb").value;
-				let ausgabe = "Fläche aus " + vSeitea + " und " +vSeiteb+ " ist: " + flaeche(vSeitea, vSeiteb);
-				
+				let vcelsius = document.getElementById("idcelsius").value;
+				let ausgabe = "Eine Temperatur von " + celsius + " C° macht in Fahrenheit: " + Fahrenheit + " C°.";
+				document.getElementById("idAusgabe").innerHTML = ausgabe;
+			}
+
+
+
+			function clicked() {
+				let vfahrenheit = document.getElementById("idfahrenheit").value;
+				let ausgabe = "Eine Temperatur von " + fahrenheit + " C° macht in Fahrenheit: " +celsius+ " C°.";
 				document.getElementById("idAusgabe").innerHTML = ausgabe;
 			}
 
@@ -21,11 +32,13 @@
 	</head>
 
 	<body>
-		<h1>Fläche eines Rechteck</h1>
-		Seite a: <input id="idSeitea" type="text" value="2"><br /><br />
-		Seite b: <input id="idSeiteb" type="text" value="3"><br /><br />
-
-		<button onClick="clicked();">Berechne Fläche</button><br /><br />
+		<h1>Celsius - Fahrenheit Umrechner</h1>
+		Celsius in Fahrenheit: <input id="idCF" type="text" value="25">
+        <button onClick="clicked();">Berechne Fahrenheit!</button><br /><br />
+		Fahrenheit in Celsius: <input id="idFC" type="text" value="15">
+        <button onClick="clicked();">Berechne Celsius!</button><br /><br />
+		
 		<div id="idAusgabe">Hier kommt beim Klicken auf den Button eine Ausgabe.</div>
+        
 	</body>
 </html>
