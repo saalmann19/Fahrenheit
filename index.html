@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<title>Fläche eines Rechtecks</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script>
+			"use strict";
+
+			function flaeche(a,b) {
+				return a*b;
+			}
+
+			function clicked() {
+				let vSeitea = document.getElementById("idSeitea").value;
+				let vSeiteb = document.getElementById("idSeiteb").value;
+				let ausgabe = "Fläche aus " + vSeitea + " und " +vSeiteb+ " ist: " + flaeche(vSeitea, vSeiteb);
+				
+				document.getElementById("idAusgabe").innerHTML = ausgabe;
+			}
+
+		</script>
+	</head>
+
+	<body>
+		<h1>Fläche eines Rechteck</h1>
+		Seite a: <input id="idSeitea" type="text" value="2"><br /><br />
+		Seite b: <input id="idSeiteb" type="text" value="3"><br /><br />
+
+		<button onClick="clicked();">Berechne Fläche</button><br /><br />
+		<div id="idAusgabe">Hier kommt beim Klicken auf den Button eine Ausgabe.</div>
+	</body>
+</html>
